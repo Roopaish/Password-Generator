@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <header>Password Generator</header>
+
+  <main>
+
+    <section id="password" class="password">
+      <textarea id="password-text" placeholder="password" readonly></textarea>
+      <button id="copy" class="copy">Copy</button>
+    </section>
+
+    <section id="password-options">
+      <label><input type="checkbox" name="password-options" id="number">Numbers</label>
+      <label><input type="checkbox" name="password-options" id="smallLetter">Small letters</label>
+      <label><input type="checkbox" name="password-options" id="capitalLetter">Capital letters </label>
+      <label><input type="checkbox" name="password-options" id="symbols">Symbols</label>
+      <label><input type="number" name="password-options" id="length" class="length">Password Length</label>
+    </section>
+
+    <input type="button" value="Generate" id="generator" class="generator">
+
+  </main>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>

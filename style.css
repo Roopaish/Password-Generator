@@ -1,0 +1,80 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body,main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body{
+  height:100vh;
+  background-color: rgb(162, 255, 255);
+}
+
+header{
+  font-size: 20px;
+  font-weight: 600;
+  color:rgb(0, 56, 56);
+  padding: 1rem;
+}
+main{
+  font-size: 18px;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 3px 3px rgba(0,0,0,0.1);
+  max-width: 15rem;
+  position: relative;
+}
+
+label,button,input{
+  cursor: pointer;
+}
+
+label{
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.password{
+  height: 3.3rem;
+  position: relative;
+}
+textarea{
+  font-size: large;
+  height: 100%;
+  overflow: hidden;
+  padding: 0.85rem 0.5rem;
+  background-color: transparent;
+  border:2px solid rgb(93, 149, 191);
+}
+
+.copy,.generator{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  padding: 1px;
+  border-radius: 2px;
+}
+.copy{
+  border:2px solid rgb(230, 142, 142);
+}
+.generator{
+  border:2px solid rgb(240, 64, 64);
+}
+.length{
+  height: 1.5rem;
+  width:5rem;
+  background-color: transparent;
+  border:1px solid rgb(122, 174, 190);
+}
+input[type=checkbox] {
+  color:red;
+  background: transparent;
+}
