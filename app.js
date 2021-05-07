@@ -18,7 +18,7 @@ console.log(generatorCopyEL)
 generatorEL.addEventListener('click',generatePassword)
 generatorCopyEL.addEventListener('click',()=>{
   generatePassword();
-  copyPassword();
+  copyPassword(); 
 })
 copyEl.addEventListener('click',copyPassword);
 
