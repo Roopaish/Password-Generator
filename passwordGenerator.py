@@ -14,11 +14,15 @@ def generatePassword():
   password = ""
   length = int(input("Enter the length of Password "))
   passwordType = input("Specilized Password(s) or Quick Password(any)?");
+
+  print("--------------------------");
+
   if passwordType == 's' or passwordType == 'S':
     numberY,smallLetterY,capitalLetterY,symbolsY = input("Should it contain Numbers?(y/n)"),input("Small Letters? "),input("Capital Letters? "),input("Symbols? ")
   else:
     numberY,smallLetterY,capitalLetterY,symbolsY = 'y','y','y','y'
   
+  print("--------------------------");
 
   for i in range(0,length):
     temp = ""
@@ -39,11 +43,13 @@ generatePassword()
 
 
 # another quick way
+print("-------Quick Way-------");
 
 def quickPassword():
   # secure_random = random.SystemRandom()
   alphabet = string.ascii_letters + string.digits + string.punctuation
   # password = "".join(secure_random.choices(alphabet,k=16));
+  # print(f"Quick Password = {password}")
   password = "".join(random.sample(alphabet,16))
   print(f"Quick Password = {password}")
 

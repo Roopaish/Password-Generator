@@ -5,6 +5,7 @@ const symbolsEl = document.getElementById("symbols");
 const lengthEl = document.getElementById("length");
 lengthEl.value = 6;
 const generatorEL = document.getElementById("generator");
+const generatorCopyEL = document.getElementById("generatorcopy");
 const passwordEl = document.getElementById("password-text");
 const copyEl = document.getElementById("copy");
 
@@ -13,7 +14,12 @@ const smallLetter = "abcdefghijklmnopqrstuvwxyz";
 const capitalLetter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const symbols = '`~!@#$%^&*()_+=-[]{};:",./?';
 
+console.log(generatorCopyEL)
 generatorEL.addEventListener('click',generatePassword)
+generatorCopyEL.addEventListener('click',()=>{
+  generatePassword();
+  copyPassword();
+})
 copyEl.addEventListener('click',copyPassword);
 
 function generatePassword(){

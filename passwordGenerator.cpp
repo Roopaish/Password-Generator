@@ -8,7 +8,6 @@
 using namespace std;
 
 float random(){
-  // current date/time based on current system
   long int t = static_cast<long int> (time(NULL));
   float randNum = fmod(t*3.141592653589793238 , 1);
   return randNum;
@@ -21,16 +20,18 @@ void generateCharacters(char choice[],char *p){
 
 
 int main(){
-  char password[] = "k";
+  char password[] = "";
   char characters[] = "";
   char *p;
   char numbers[] = "0123456789";
   char smallLetters[] = "abcdefghijklmnopqrstuvwxyz";
   char capitalLetters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   char symbols[] = "`~!@#$%^&*()_+-={}[]:'.,><?/";
-  int length=3,i;
+  int length=6,i;
 
   for(i=0;i<length;i++){
+
+    //line of code that's stopping the loop
     generateCharacters(numbers,p);
     p[1]='\0';
     strcat(characters,p);
@@ -46,14 +47,14 @@ int main(){
     generateCharacters(symbols,p);
     p[1]='\0';
     strcat(characters,p);
+    
+    password[i] = characters[int(random()*length)];
+    //upper lines of code is causing loop termination
 
-    cout<<i;
-    // float r=random()*(4);
-    // cout<<endl<<"hey "<<r;
-    // cout<<endl<<characters[int(random() * length)];
+    cout<<endl<<"Program Execution stops here! Loop terminates!";
   }
 
-  // strcpy(password,p);
-  // password[length]='\0';
-  // cout<<endl<<"Password = "<<password;
+  cout<<endl<<"This line doesn't execute!";
+  password[length]='\0';
+  cout<<endl<<"Password = "<<password;
 }
