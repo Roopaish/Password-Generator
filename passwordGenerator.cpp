@@ -1,60 +1,63 @@
 //Equivalent C++ code
 
 #include<iostream>
-#include<cstring>
-#include<cmath>
 #include <ctime>
+#include<conio.h>
 
 using namespace std;
 
-float random(){
-  long int t = static_cast<long int> (time(NULL));
-  float randNum = fmod(t*3.141592653589793238 , 1);
-  return randNum;
-}
-
-void generateCharacters(char choice[],char *p){
-  float r=random()*(strlen(choice)+1);
-  *p = choice[int(r)];
-}
-
-
 int main(){
-  char password[] = "";
-  char characters[] = "";
-  char *p;
-  char numbers[] = "0123456789";
-  char smallLetters[] = "abcdefghijklmnopqrstuvwxyz";
-  char capitalLetters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  char symbols[] = "`~!@#$%^&*()_+-={}[]:'.,><?/";
-  int length=6,i;
+  string numbers = "0123456789";
+  string smallLetters = "abcdefghijklmnopqrstuvwxyz";
+  string capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  string symbols = "`~!@#$%^&*()_+-={}[]:'.,><?/";
+  int length;
+  
+  string password = "";
+  string characters = "";
+  char choice;
+ 
+  srand(time(0));
 
-  for(i=0;i<length;i++){
+  cout<<endl<<"Enter Length of password ";
+  cin>>length;
+  cout<<endl<<"Specialized Password(s) or Quick Password(any)?";
+  cin>>choice;
+  if(choice == 's'){
+    cout<<endl<<"Include Numbers?(y/n) ";
+    cin>>choice;
+    if(choice == 'y'){
+      characters += numbers;
+    }
 
-    //line of code that's stopping the loop
-    generateCharacters(numbers,p);
-    p[1]='\0';
-    strcat(characters,p);
-
-    generateCharacters(smallLetters,p);
-    p[1]='\0';
-    strcat(characters,p);
-
-    generateCharacters(capitalLetters,p);
-    p[1]='\0';
-    strcat(characters,p);
-
-    generateCharacters(symbols,p);
-    p[1]='\0';
-    strcat(characters,p);
+    cout<<endl<<"Include SmallLetters?(y/n) ";
+    cin>>choice;
+    if(choice == 'y'){
+      characters += smallLetters;
+    }
     
-    password[i] = characters[int(random()*length)];
-    //upper lines of code is causing loop termination
+    cout<<endl<<"Include CapitalLetters?(y/n) ";
+    cin>>choice;
+    if(choice == 'y'){
+      characters += capitalLetters;
+    }
+    
+    cout<<endl<<"Include Symbols?(y/n) ";
+    cin>>choice;
+    if(choice == 'y'){
+      characters += symbols;
+    }
 
-    cout<<endl<<"Program Execution stops here! Loop terminates!";
+  }else{
+    characters = numbers + smallLetters + capitalLetters + symbols;
   }
 
-  cout<<endl<<"This line doesn't execute!";
-  password[length]='\0';
-  cout<<endl<<"Password = "<<password;
+  for(int i=0;i<length;i++){
+    password += characters[rand() % characters.size()];
+  }
+
+  cout<<endl<<endl<<"------------------"
+      <<endl<<"Your Password = "<<password;
+
+  getch();
 }

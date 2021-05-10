@@ -1,5 +1,4 @@
 const numberEl = document.getElementById("number");
-const smallLetterEL = document.getElementById("smallLetter");
 const capitalLetterEl = document.getElementById("capitalLetter");
 const symbolsEl = document.getElementById("symbols");
 const lengthEl = document.getElementById("length");
