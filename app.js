@@ -1,6 +1,4 @@
-const numberEl = document.getElementById("number");
-const capitalLetterEl = document.getElementById("capitalLetter");
-const symbolsEl = document.getElementById("symbols");
+
 const lengthEl = document.getElementById("length");
 lengthEl.value = 6;
 const generatorEL = document.getElementById("generator");
@@ -8,12 +6,12 @@ const generatorCopyEL = document.getElementById("generatorcopy");
 const passwordEl = document.getElementById("password-text");
 const copyEl = document.getElementById("copy");
 
+
 const numbers = '0123456789';
 const smallLetter = "abcdefghijklmnopqrstuvwxyz";
 const capitalLetter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const symbols = '`~!@#$%^&*()_+=-[]{};:",./?';
 
-console.log(generatorCopyEL)
 generatorEL.addEventListener('click',generatePassword)
 generatorCopyEL.addEventListener('click',()=>{
   generatePassword();
@@ -38,19 +36,19 @@ function generatePassword(){
 function generateCharacters(){
   let p = [];
 
-  if(numberEl.checked){
+  if(document.getElementById("number").checked){
     p.push(numbers[Math.floor(Math.random()*numbers.length)])
   }
 
-  if(smallLetterEL.checked){
+  if(document.getElementById("smallLetters").checked){
     p.push(smallLetter[Math.floor(Math.random()*smallLetter.length)])
   }
  
-  if(capitalLetterEl.checked){
+  if(document.getElementById("capitalLetter").checked){
     p.push(capitalLetter[Math.floor(Math.random()*capitalLetter.length)])
   }
 
-  if(symbolsEl.checked){
+  if(document.getElementById("symbols").checked){
     p.push(symbols[Math.floor(Math.random()*symbols.length)])
   }
 
